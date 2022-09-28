@@ -1,6 +1,6 @@
 package View;
 
-public class view {
+public class View {
 public static void main(String[] args) {
 	
 }
