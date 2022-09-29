@@ -2,14 +2,20 @@ package Model.Dto;
 
 public class MemberDto {
 
-	
 	// 1. 필드
+	
 	private String name;		// 이름 
 	private String pw;			// 비밀번호
 	private String phone;		// 전화번호
 	private int ssn;			// 생년월일
 	private String email;		// 이메일
 	private int date;			// 가입일자
+	
+	private String nick_name;	// 캐릭터 이름
+	private String x;			// 캐릭터 성별
+	
+	
+	
 	private int user_hp;		// 체력
 	private int user_mp;		// 마력
 	private int user_damage;	// 유저 데미지
@@ -27,7 +33,7 @@ public class MemberDto {
 	private int level;			// 레벨
 	private String dungeon;		// 던전
 	private int attack;			// 때린 횟수
-	private String nick_name;	// 캐릭터이름
+	
 
 	
 	// 빈생성자
