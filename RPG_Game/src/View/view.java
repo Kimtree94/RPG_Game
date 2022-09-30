@@ -4,14 +4,14 @@ import java.util.Scanner;
 
 import Model.Dao.MemberDao;
 
-public class View {
+public class view {
 	
 	// 현재 페이지 객체 선언
-	private static View view = new View();
+	private static view view = new view();
 	// 빈생성자
-	public View() {	}
+	public view() {	}
 	// 싱글톤 메소드
-	public static View getInstance() {
+	public static view getInstance() {
 		return view;
 	}
 	
