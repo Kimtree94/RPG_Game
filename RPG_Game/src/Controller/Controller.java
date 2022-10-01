@@ -1,9 +1,12 @@
 package Controller;
 
+import Model.Dao.MemberDao;
+import Model.Dto.MemberDto;
+
 public class Controller {
 
 	// 현재 페이지 객체 선언
-	private static Controller Controller = new Controller();
+	public static Controller Controller = new Controller();
 	// 빈생성자
 	public Controller() { }
 	// 싱글톤 메소드
@@ -11,6 +14,20 @@ public class Controller {
 		return Controller;
 	}
 	
+	
+	//로그인 메소드
+	public boolean login(String ID , String pw) {
+		MemberDto dto = new MemberDto(ID, pw);
+		boolean result = MemberDao.getInstance().login(dto);
+		
+		if(result==true) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	
+	}	
 	
 	
 	

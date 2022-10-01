@@ -5,6 +5,7 @@ public class MemberDto {
 	// 1. 필드
 	
 	private String name;		// 이름 
+	private String ID;			// 아이디
 	private String pw;			// 비밀번호
 	private String phone;		// 전화번호
 	private int ssn;			// 생년월일
@@ -32,17 +33,28 @@ public class MemberDto {
 	private String change_jobs;	// 전직
 	private int level;			// 레벨
 	private String dungeon;		// 던전
-	private int attack;			// 때린 횟수
+	private int attack;
+		// 때린 횟수
 	
 
 	
 	// 빈생성자
 	public MemberDto() {
-		
+		super();
+	}
+	
+
+
+
+	public MemberDto(String iD, String pw) {
+		super();
+		ID = iD;
+		this.pw = pw;
 	}
 
 
-	
+
+
 	public String getName() {
 		return name;
 	}
@@ -51,6 +63,18 @@ public class MemberDto {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+
+
+	public String getID() {
+		return ID;
+	}
+
+
+
+	public void setID(String iD) {
+		ID = iD;
 	}
 
 
@@ -111,6 +135,30 @@ public class MemberDto {
 
 	public void setDate(int date) {
 		this.date = date;
+	}
+
+
+
+	public String getNick_name() {
+		return nick_name;
+	}
+
+
+
+	public void setNick_name(String nick_name) {
+		this.nick_name = nick_name;
+	}
+
+
+
+	public String getX() {
+		return x;
+	}
+
+
+
+	public void setX(String x) {
+		this.x = x;
 	}
 
 
@@ -315,27 +363,7 @@ public class MemberDto {
 
 	public void setAttack(int attack) {
 		this.attack = attack;
-	}
+	}		
 
-
-
-	public String getNick_name() {
-		return nick_name;
-	}
-
-
-
-	public void setNick_name(String nick_name) {
-		this.nick_name = nick_name;
-	}
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
+	
