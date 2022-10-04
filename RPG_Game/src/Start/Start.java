@@ -8,8 +8,6 @@ public class Start {
 		
 		Start start = new Start();
 		start.first_view();
-		
-		
 	}
 	
 	

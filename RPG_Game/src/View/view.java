@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 import Controller.Controller;
 import Model.Dao.MemberDao;
+import Model.Dto.MemberDto;
 
 public class view {
-
 
 	// 현재 페이지 객체 선언
 	private static view view = new view();
@@ -17,10 +17,10 @@ public class view {
 		return view;
 	}
 	
+
 	Scanner scanner = new Scanner(System.in);
 	
 	public void first_view() {
-		
 		System.out.println(" ⚔⚔⚔⚔⚔⚔⚔자바죽이기⚔⚔⚔⚔⚔⚔⚔⚔\n⚔\t\t\t\t  ⚔\r\n" + "⚔\t　　ｏ\t\t\t  ⚔\r\n" + "⚔\t　　°\t\t\t  ⚔\r\n"
 				+ "⚔\t　┳┳ ∩∩\t\t\t  ⚔\r\n" + "⚔\t　┃┃(･∀･)　☆　　★\t\t  ⚔\r\n" + "⚔\t┏┻┻┷━Ｏ ┏┷┓┏┷┓\t\t  ⚔\r\n"
 				+ "⚔\t┃Welcome┠┨★┠┨☆┃\t  ⚔\r\n" + "⚔\t┗©━━©┛ ┗©┛┗©┛\t\t  ⚔ \n ⚔⚔⚔ RPG게임에 오신것을 환영합니다 ⚔⚔⚔");
@@ -34,7 +34,6 @@ public class view {
 			singup();
 			
 		} // else if 종료
-	
 	} //first view E
 		
 	
@@ -53,6 +52,7 @@ public class view {
 		System.out.println("\t ◦ 이메일 : ");
 		String email = scanner.next();
 		
+
 		boolean result = Controller.getInstance().singup(name, pw, phone, ssn, email);
 		if ( result ) {
 			System.out.println("\t🎉 회원가입 완료 🎉");
@@ -61,6 +61,21 @@ public class view {
 			System.out.println("\t😥 회원가입 실패 😥");
 		}
 	} // singup 메소드 종료	
+
+	boolean login() {
+		System.out.println("ID를 입력하세요");
+		String ID = scanner.next();
+		System.out.println("PW를 입력하세요");
+		String PW = scanner.next();
+		boolean result = Controller.getInstance().login(ID, PW);
+		if(result==true) {
+			return true;
+		}else {
+			return false;
+		}
+	
+	}
+
 	
 	
 	
