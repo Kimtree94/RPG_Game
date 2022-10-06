@@ -8,7 +8,8 @@ public class Start {
 		
 		Start start = new Start();
 		start.first_view();
-	}
+		
+	} // main 종료
 	
 	
 	public void first_view() {

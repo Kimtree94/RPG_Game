@@ -34,7 +34,23 @@ public class Pattern {
 	    // 이메일 : \\w+@\\w+\\.\\w+(\\.\\w+)?
 	    // 폰번호 :  ^01(?:0|1|[6-9])-(?:\d{3}|\d{4})-\d{4}$ 
 	    
-	    // ^[?0|1|0|-\d{4}-\d{4}]$ --> 폰번호 010만 쓰려면 이렇게 하면 되나..?
+	    // 폰번호 010만 쓰기 : ^010-(\\d{4})-(\\d{4})$
+		
+		
+		String phoneNum = "^010-(\\d{4})-(\\d{4})$";
+		String test1 = "010-1234-1234";
+		System.out.println("phoneNum : " + test1.matches(phoneNum));
+		
+		String nickName = "^[가-힣][a-zA-Z]*$";
+		String test2 = "가나다라";
+		System.out.println("nickName : " + test2.matches(nickName));
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
