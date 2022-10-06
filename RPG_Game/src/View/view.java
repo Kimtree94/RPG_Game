@@ -43,6 +43,8 @@ public class view {
 		System.out.println("     ◾ ◾ ◾ ◾ 회 원 가 입 ◾ ◾ ◾ ◾ \n");
 		System.out.println("\t ◦ 이름 : ");
 		String name = scanner.next();
+		System.out.println("\t ◦ 아이디 : ");
+		String id = scanner.next();
 		System.out.println("\t ◦ 비밀번호 : ");
 		String pw = scanner.next();
 		System.out.println("\t ◦ 전화번호 : ");
@@ -53,7 +55,7 @@ public class view {
 		String email = scanner.next();
 		
 
-		boolean result = Controller.getInstance().singup(name, pw, phone, ssn, email);
+		boolean result = Controller.getInstance().singup(name, id, pw, phone, ssn, email);
 		if ( result ) {
 			System.out.println("\t🎉 회원가입 완료 🎉");
 		}

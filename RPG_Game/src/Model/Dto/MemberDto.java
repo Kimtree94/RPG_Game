@@ -12,101 +12,124 @@ public class MemberDto {
 	private String email;		// 이메일
 	private int date;			// 가입일자
 	
+	private String nick_name;	// 캐릭터 이름
+	private String x;			// 캐릭터 성별
 	
 
 	// 빈생성자
 	public MemberDto() {
-		
-	}
-
-	// 풀생성자
-	public MemberDto(String name, String iD, String pw, String phone, int ssn, String email, int date) {
 		super();
-		this.name = name;
-		ID = iD;
-		this.pw = pw;
-		this.phone = phone;
-		this.ssn = ssn;
-		this.email = email;
-		this.date = date;
 	}
-
 	
+
 	// 로그인 생성자
-	public MemberDto(String iD, String pw) {
+	public MemberDto(String ID, String pw) {
 		super();
-		ID = iD;
+		this.ID = ID;
 		this.pw = pw;
 	}
-	
+
+
 	// 회원가입 생성자
-	public MemberDto(String name, String pw, String phone, int ssn, String email) {
-		super();
+	public MemberDto(String name, String ID, String pw, String phone, int ssn, String email) {
 		this.name = name;
+		this.ID = ID;
 		this.pw = pw;
 		this.phone = phone;
 		this.ssn = ssn;
 		this.email = email;
 	}
 
-	// geters seters
+
 	public String getName() {
 		return name;
 	}
+
 
 	public void setName(String name) {
 		this.name = name;
 	}
 
+
 	public String getID() {
 		return ID;
 	}
+
 
 	public void setID(String iD) {
 		ID = iD;
 	}
 
+
 	public String getPw() {
 		return pw;
 	}
+
 
 	public void setPw(String pw) {
 		this.pw = pw;
 	}
 
+
 	public String getPhone() {
 		return phone;
 	}
+
 
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 
+
 	public int getSsn() {
 		return ssn;
 	}
+
 
 	public void setSsn(int ssn) {
 		this.ssn = ssn;
 	}
 
+
 	public String getEmail() {
 		return email;
 	}
+
 
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
+
 	public int getDate() {
 		return date;
 	}
 
+
 	public void setDate(int date) {
 		this.date = date;
 	}
-	
-	
+
+
+	public String getNick_name() {
+		return nick_name;
+	}
+
+
+	public void setNick_name(String nick_name) {
+		this.nick_name = nick_name;
+	}
+
+
+	public String getX() {
+		return x;
+	}
+
+
+	public void setX(String x) {
+		this.x = x;
+	}
+
 	
 	
 }

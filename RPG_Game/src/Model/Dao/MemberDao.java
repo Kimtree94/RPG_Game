@@ -49,17 +49,17 @@ public class MemberDao {
 
 	public boolean singup( MemberDto dto ) {
 	
-		String sql = "insert into user values( null, ?, ?, ?, ?, ?, now() )";
+		String sql = "insert into user values( null, ?, ?, ?, ?, ?, ?, now() )";
 		
 		try {
 			ps = con.prepareStatement(sql);
 			ps.setString(1, dto.getName());
-			ps.setString(2, dto.getPw());
-			ps.setString(3, dto.getPhone());
-			ps.setInt(4, dto.getSsn());
-			ps.setString(5, dto.getEmail());
+			ps.setString(2, dto.getID());
+			ps.setString(3, dto.getPw());
+			ps.setString(4, dto.getPhone());
+			ps.setInt(5, dto.getSsn());
+			ps.setString(6, dto.getEmail());
 			ps.executeUpdate();
-			
 			return true;
 			
 		} catch (Exception e) {

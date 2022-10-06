@@ -16,8 +16,8 @@ public class Controller {
 	
 
 	// 회원가입
-	public boolean singup( String name, String pw, String phone, int ssn, String email ) {
-		MemberDto dto = new MemberDto(name, pw, phone, ssn, email);
+	public boolean singup( String name, String ID, String pw, String phone, int ssn, String email ) {
+		MemberDto dto = new MemberDto(name, ID, pw, phone, ssn, email);
 		return MemberDao.getInstance().singup( dto );
 		
 	} // singup 메소드 종료

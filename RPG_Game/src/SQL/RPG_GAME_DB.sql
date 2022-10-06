@@ -9,6 +9,7 @@ create table user(
 
 	user_no int primary key auto_increment not null ,			-- 회원번호
 	name varchar(10) ,											-- 이름 
+	id varchar(20) ,											-- 아이디
 	pw varchar(20) ,											-- 비밀번호
 	phone varchar(15) ,											-- 전화번호
 	ssn int ,													-- 생년월일
