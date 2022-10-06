@@ -3,8 +3,10 @@ package View;
 import java.util.Scanner;
 
 import Controller.Controller;
+import Controller.SearchController;
 import Model.Dao.MemberDao;
 import Model.Dto.MemberDto;
+import Model.Dto.SearchDto;
 
 public class view {
 
@@ -37,7 +39,7 @@ public class view {
 	} //first view E
 		
 	
-	//회원가입
+	// 회원가입 - 허혜영
 	public void singup() {
 	
 		System.out.println("     ◾ ◾ ◾ ◾ 회 원 가 입 ◾ ◾ ◾ ◾ \n");
@@ -78,10 +80,37 @@ public class view {
 	
 	}
 
+	// 아이디 찾기 - 허혜영
+	public void id_search() {
+		// 이름, 연락처
+		System.out.println("     ◾ ◾ ◾ ◾ 아이디 찾기 ◾ ◾ ◾ ◾ ");
+		System.out.println("\t ◦ 이름을 입력하세요");
+		String name = scanner.next();
+		System.out.println("\t ◦ 연락처를 입력하세요");
+		String phone = scanner.next();
+		SearchController.getInstance().id_search( name, phone );
+		
+		SearchDto sdto = SearchController.getInstance().id_search(name, phone);
+		System.out.println("\t ◦ 당신의 아이디는 [ " + sdto.getID() + " ] 입니다!");
+
+		
+		
+	} // id_search 메소드 종료
 	
-	
-	
-	
+	// 비밀번호 찾기 - 허혜영	
+	public void pw_search() {
+		// 아이디, 연락처
+		System.out.println("     ◾ ◾ ◾ ◾ 비밀번호 찾기 ◾ ◾ ◾ ◾ ");
+		System.out.println("\t ◦ 아이디를 입력하세요");
+		String id = scanner.next();
+		System.out.println("\t ◦ 생년월일을 입력하세요");
+		int ssn = scanner.nextInt();
+		
+		MemberDto mdto = SearchController.getInstance().pw_search( id, ssn );
+		System.out.println("\t ◦ 당신의 아이디는 [ " + mdto.getPw() + " ] 입니다!");
+		
+		
+	} // pw_search 메소드 종료
     
     
 	

@@ -2,6 +2,7 @@ package Controller;
 
 import Model.Dao.MemberDao;
 import Model.Dto.MemberDto;
+import Model.Dto.SearchDto;
 
 public class Controller {
 
@@ -15,7 +16,7 @@ public class Controller {
 	}
 	
 
-	// 회원가입
+	// 회원가입 - 허혜영
 	public boolean singup( String name, String ID, String pw, String phone, int ssn, String email ) {
 		MemberDto dto = new MemberDto(name, ID, pw, phone, ssn, email);
 		return MemberDao.getInstance().singup( dto );
@@ -37,7 +38,6 @@ public class Controller {
 	
 	}	
 
-	
 	
 	
 } // class e

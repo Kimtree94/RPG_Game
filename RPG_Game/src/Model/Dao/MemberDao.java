@@ -7,14 +7,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import Model.Dto.MemberDto;
-
+import Model.Dto.SearchDto;
 import Model.Dto.MemberDto;
 
 public class MemberDao {
 
 	// 현재 페이지 객체 선언
 	private static MemberDao memberDao = new MemberDao();
-	
 	
 	
 	//필드
@@ -45,12 +44,10 @@ public class MemberDao {
 		
 	}
 	
-	//회원가입 메소드(허혜영)
+	// 회원가입 - 허혜영
 
 	public boolean singup( MemberDto dto ) {
-	
 		String sql = "insert into user values( null, ?, ?, ?, ?, ?, ?, now() )";
-		
 		try {
 			ps = con.prepareStatement(sql);
 			ps.setString(1, dto.getName());
@@ -92,7 +89,7 @@ public class MemberDao {
 		
 	}
 	
-	 
+	
 	 
 	 
 	

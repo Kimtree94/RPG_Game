@@ -7,7 +7,9 @@ public class Start {
 	public static void main(String[] args) {
 		
 		Start start = new Start();
-		start.first_view();
+		// start.pw_search();
+		start.id_search();
+		// start.first_view();
 		
 	} // main 종료
 	
@@ -20,6 +22,15 @@ public class Start {
 		view.getInstance().singup();		
 	}
 	
+	public void id_search() {
+		view.getInstance().id_search();
+		
+	}
+	
+	public void pw_search() {
+		view.getInstance().pw_search();
+		
+	}
 	
 	
 	
