@@ -31,6 +31,13 @@ public class CharacterDto {
 		this.user_gold = user_gold;
 	}
 
+	// 내 정보 보기 생성자 - 허혜영
+	public CharacterDto(String nick_name, String x) {
+		super();
+		this.nick_name = nick_name;
+		this.x = x;
+	}
+	
 	// geters seters
 	public String getNick_name() {
 		return nick_name;

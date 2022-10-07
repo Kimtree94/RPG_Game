@@ -71,7 +71,7 @@ public class MemberDao {
 	
 	//로그인 메소드 (김원종)
 	public boolean login(MemberDto dto) {
-		String sql="select * from members where (memID, memPW) =  (? , ?) ";
+		String sql="select * from user where (id, pw) =  (? , ?) ";
 		try {
 		ps=con.prepareStatement(sql);
 		ps.setString(1, dto.getID());

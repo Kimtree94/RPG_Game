@@ -10,7 +10,7 @@ public class SearchDto {
 	private int ssn;			// 생년월일
 	private String email;		// 이메일
 	private int date;			// 가입일자
-
+	
 	
 	
 	
@@ -25,10 +25,21 @@ public class SearchDto {
 		this.ssn = ssn;
 	}
 
+	// 내 정보 보기 생성자 - 허혜영
+	public SearchDto(String name, String phone, String email, int date) {
+		this.name = name;
+		this.phone = phone;
+		this.email = email;
+		this.date = date;
+		
+	}
+	
 	// geters seters
 	public String getName() {
 		return name;
 	}
+
+	
 
 	public void setName(String name) {
 		this.name = name;

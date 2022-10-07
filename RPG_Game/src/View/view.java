@@ -1,5 +1,6 @@
 package View;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import Controller.Controller;
@@ -29,7 +30,7 @@ public class view {
 		System.out.println("\t1.로그인 2.회원가입 ");
 		int input = scanner.nextInt();
 		if( input == 1 ) {
-			
+			login();
 		}
 		
 		else if( input == 2 ) {
@@ -73,6 +74,7 @@ public class view {
 		String PW = scanner.next();
 		boolean result = Controller.getInstance().login(ID, PW);
 		if(result==true) {
+			mypage_user();
 			return true;
 		}else {
 			return false;
@@ -109,9 +111,29 @@ public class view {
 		MemberDto mdto = SearchController.getInstance().pw_search( id, ssn );
 		System.out.println("\t ◦ 당신의 아이디는 [ " + mdto.getPw() + " ] 입니다!");
 		
-		
 	} // pw_search 메소드 종료
     
+	
+	// 내 정보 보기 - 허혜영
+	public void mypage_user() {
+		
+		SearchDto sdto = SearchController.getInstance().mypage_user();
+		
+		if( sdto == null ) {
+			System.out.println("회원 정보가 일치하지 않습니다.");
+			return;
+		}
+		
+		System.out.println("     ◾ ◾ ◾ ◾ 유저 정보 ◾ ◾ ◾ ◾ ");
+		System.out.println("\t ◦ 이름 : " + sdto.getName());
+		System.out.println("\t ◦ 연락처 : " + sdto.getPhone());
+		System.out.println("\t ◦ 메일주소 : " + sdto.getEmail());
+		System.out.println("\t ◦ 가입일자 : " + sdto.getDate());
+		
+		System.out.println("     ◾ ◾ ◾ ◾ 캐릭터 정보 ◾ ◾ ◾ ◾ ");
+		System.out.println("\t ◦ 닉네임 : " + "");
+		System.out.println("\t ◦ 성별 : " + "");
+	}
     
 	
 	

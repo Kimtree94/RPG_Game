@@ -4,7 +4,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
+import Model.Dto.CharacterDto;
 import Model.Dto.MemberDto;
 import Model.Dto.SearchDto;
 
@@ -74,7 +76,84 @@ public class SearchDao {
 				System.out.println( "아이디 찾기 오류 : " + e );
 			}
 			return null;
-	}	// pw_search 메소드 종료
+	} // pw_search 메소드 종료
+	
+	
+	
+//	// 내 정보 보기 - 허혜영
+//	public void mypage() {
+//		
+//		//ArrayList< SearchDto > list = new ArrayList<>();
+//		String sql = "select u.name, u.phone, u.email, u.date, c.nick_name, c.x\r\n"
+//				+ "from user as u\r\n"
+//				+ "inner join create_character as c\r\n"
+//				+ "where id = ? ";
+//		
+//		SearchDto sdto = null;
+//		CharacterDto cdto = null;
+//		
+//		
+//		try {
+//			ps = con.prepareStatement(sql);
+//			rs = ps.executeQuery();
+//			
+//			if( rs.next() ) {
+//								
+//				sdto = new SearchDto(
+//						rs.getString(1),rs.getString(2),rs.getString(3),rs.getInt(4));
+//				
+//				cdto = new CharacterDto(
+//						rs.getString(5), rs.getString(6));
+//			}
+//			return;
+//		} catch (Exception e) {
+//			System.out.println( "오류 : " + e );
+//		}
+//		return;
+//	} // mypage_user 메소드 종료
+	
+	
+
+	// 내 정보 보기(유저) - 허혜영
+	public SearchDto mypage_user() {
+
+		String sql = "select name, phone, email, date from user where id = ? ";
+		
+		try {
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			
+			if( rs.next() ) {
+				SearchDto sdto = new SearchDto(
+						rs.getString(1),rs.getString(2),rs.getString(3),rs.getInt(4));
+				return sdto;		
+			}
+		} catch (Exception e) {
+			System.out.println( "오류 : " + e );
+		}
+		return null;
+	} // mypage_user 메소드 종료
+
+	
+	// 내 정보 보기 (캐릭터) - 허혜영
+	public void mypage_character() {
+		
+		
+	} // mypage_character 메소드 종료
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

@@ -39,6 +39,9 @@ insert into user values(null,'홍길동','1234','010-1234-1234','941011','mdm@na
 select*from user;
 
 
+select name, phone, email, date from user where id = "전사다";
+select nick_name, x from create_character where user_no = "1";
 
+select * from user where (id, pw) =  ("전사다" , "1234");
 
 
