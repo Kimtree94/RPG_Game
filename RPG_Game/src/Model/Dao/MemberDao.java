@@ -97,5 +97,24 @@ public class MemberDao {
 		}
 		return false;
 	}
-
+	
+	//회원정보수정 메소드(김원종) [ 2022- 10 -07 ] 
+	public boolean usercorrection(MemberDto dto) {
+		String sql = "UPDATE user SET  "
+				+ "id = ?,pw=? "
+				+ ",phone=?"
+				+ ",email=?"
+				+ " WHERE pw= ?";
+	try {
+		ps=con.prepareStatement(sql);
+		ps.setString(1, dto.getPw());
+		ps.setString(2, dto.getPhone());
+		ps.setString(3, dto.getEmail());
+		ps.setString(4, dto.getID());
+		ps.setString(5, dto.getPw());
+		ps.executeUpdate();
+		return true;
+	} catch (Exception e) {System.out.println(e);}
+	return false;
+	}
 } // class e

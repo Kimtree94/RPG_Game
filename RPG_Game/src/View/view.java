@@ -30,14 +30,14 @@ public class view {
 		int input = scanner.nextInt();
 		if (input == 1) {
 			view.login();
-			view.first_view();
+			view.select();
 		}
 
 		else if (input == 2) {
 			singup();
 
 		} // else if 종료
-		else if (input == 3) {
+		else if (input== 3) {
 			view.userout();
 			view.first_view();
 		} // else if 종료 [회원탈퇴 김원종 ]
@@ -47,6 +47,19 @@ public class view {
 		// - 회원수정 
 		// - 내 캐릭터 목록보기
 
+	
+	
+	//임시 마을
+	public void select() {
+		System.out.println("1.캐릭터생성 2.회원정보수정");
+		int ch=scanner.nextInt();
+		if(ch==1) {}
+		if(ch==2) {
+			view.usercorrection();
+		}
+	}
+	
+	
 	// 회원가입
 	public void singup() {
 
@@ -109,6 +122,27 @@ public class view {
 		return false;
 	}
 	
+	// 회원정보수정 (김원종) [ 2022 - 10 -07 ] 
+	boolean usercorrection() {
+		
+		System.out.println("회원님의 현재 비밀번호를 입력해주요.");
+		String pw = scanner.next();
+		System.out.println("수정할 아이디를 입력해주세요.");
+		String reid = scanner.next();
+		System.out.println("수정할 비밀번호를 입력해주요.");
+		String repw = scanner.next();
+		System.out.println("수정할 핸드폰번호를 입력해주요.");
+		String rephone = scanner.next();
+		System.out.println("수정할 이메일을 입력해주요.");
+		String reemail = scanner.next();
+	
+		
+		boolean result = Member_Controller.getInstance().usercorrection(pw, reid, repw, rephone, reemail);
+		if(result) {
+			System.out.println("회원정보를 수정했습니다.");
+			return result;}
+		else {return false;}
+	}
 	
 
 } // class E

@@ -47,5 +47,13 @@ public class Member_Controller {
 			return false;
 		}
 	}
+	
+	//회원정보 수정 메소드(김원종) [ 2022-10 -07 ]
+	public boolean usercorrection(String pw,String reid,String repw ,String rephone,String reemail ) {
+		MemberDto dto = new MemberDto();
+		boolean result = MemberDao.getInstance().usercorrection(dto);
+		return result;
+	}
+	
 
 } // class e
