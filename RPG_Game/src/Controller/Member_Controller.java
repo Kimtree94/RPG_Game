@@ -1,6 +1,9 @@
 package Controller;
 
+import java.util.ArrayList;
+
 import Model.Dao.MemberDao;
+import Model.Dto.CharacterDto;
 import Model.Dto.MemberDto;
 
 public class Member_Controller {
@@ -54,6 +57,16 @@ public class Member_Controller {
 		boolean result = MemberDao.getInstance().usercorrection(dto);
 		return result;
 	}
+	
+	//내 캐릭터 목록 보기 (김원종) [ 2022 - 10 -09 ]
+	
+	public ArrayList<CharacterDto> character() {
+		CharacterDto dto = new CharacterDto();
+		return MemberDao.getInstance().character();
+	}
+	
+	
+	
 	
 
 } // class e

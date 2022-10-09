@@ -5,7 +5,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
+import Model.Dto.CharacterDto;
 import Model.Dto.MemberDto;
 
 import Model.Dto.MemberDto;
@@ -100,11 +102,7 @@ public class MemberDao {
 	
 	//회원정보수정 메소드(김원종) [ 2022- 10 -07 ] 
 	public boolean usercorrection(MemberDto dto) {
-		String sql = "UPDATE user SET  "
-				+ "id = ?,pw=? "
-				+ ",phone=?"
-				+ ",email=?"
-				+ " WHERE pw= ?";
+		String sql = "update user SET  id = ?,pw=? ,phone=?,email=? WHERE pw= ? ";
 	try {
 		ps=con.prepareStatement(sql);
 		ps.setString(1, dto.getPw());
@@ -117,4 +115,52 @@ public class MemberDao {
 	} catch (Exception e) {System.out.println(e);}
 	return false;
 	}
+	
+	
+	// 내 캐릭터 목록보기(김원종) [ 2022 - 10 - 09 ]
+	public ArrayList<CharacterDto> character() {
+		ArrayList<CharacterDto> list = new ArrayList<>();
+		String sql = "select*from  create_character";
+		try {
+			ps=con.prepareStatement(sql);
+			rs=ps.executeQuery();
+			while(rs.next()) {
+				CharacterDto dto = new CharacterDto(rs.getString(2),rs.getString(3));
+				list.add(dto);
+			}
+			return list;
+		} catch (Exception e) {System.out.println("캐릭터목록 오류"+e);}
+		return list;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 } // class e

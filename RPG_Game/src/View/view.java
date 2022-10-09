@@ -1,9 +1,11 @@
 package View;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import Controller.Member_Controller;
 import Model.Dao.MemberDao;
+import Model.Dto.CharacterDto;
 import Model.Dto.MemberDto;
 
 public class view {
@@ -44,13 +46,14 @@ public class view {
 
 	} // first view E
 		// - 회원탈퇴 완
-		// - 회원수정 
+		// - 회원수정 미완
 		// - 내 캐릭터 목록보기
 
 	
 	
 	//임시 마을
 	public void select() {
+		view.character();System.out.println();
 		System.out.println("1.캐릭터생성 2.회원정보수정");
 		int ch=scanner.nextInt();
 		if(ch==1) {}
@@ -143,6 +146,13 @@ public class view {
 			return result;}
 		else {return false;}
 	}
-	
-
+	//내 캐릭터 목록 보기 (김원종) [ 2022 - 10 -09 ]
+	void character() {
+		ArrayList<CharacterDto> list = Member_Controller.getInstance().character();
+		System.out.println("회원님의 캐릭터 목록입니다.");
+		for(CharacterDto dto :list) {
+			System.out.println("캐릭터이름\t|캐릭터성별");
+			System.out.print(dto.getNick_name()+"\t|"+dto.getX());
+		}
+	}
 } // class E

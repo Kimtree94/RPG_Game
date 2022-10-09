@@ -16,6 +16,12 @@ public class CharacterDto {
 	public CharacterDto() {
 		
 	}
+	
+	public CharacterDto(String nick_name, String x) {
+		super();
+		this.nick_name = nick_name;
+		this.x = x;
+	}
 
 	// 풀생성자
 	public CharacterDto(String nick_name, String x, int user_hp, int user_mp, int user_damage, int user_level,
