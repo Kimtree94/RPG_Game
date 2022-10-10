@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 import Model.Dto.CharacterDto;
 import Model.Dto.MemberDto;
-
+import Model.Dto.SearchDto;
 import Model.Dto.MemberDto;
 
 public class MemberDao {
@@ -17,7 +17,8 @@ public class MemberDao {
 	// 현재 페이지 객체 선언
 	private static MemberDao memberDao = new MemberDao();
 
-	// 필드
+
+	//필드
 	private Connection con;
 	private PreparedStatement ps;
 	private ResultSet rs;
@@ -28,6 +29,20 @@ public class MemberDao {
 	public static MemberDao getInstance() {
 		return memberDao;
 	}
+
+	 private MemberDao() {
+		try {
+			con= DriverManager.getConnection(
+					"jdbc:mysql://localhost:3306/RPG_GAME_DB", 
+					"root", 
+					"1234");
+			System.out.println("DB연동성공");
+		}//try E
+		catch (Exception e) {System.out.println("오류발생"+e);}//catch E
+		
+	}
+	
+	// 회원가입 - 허혜영
 
 	private MemberDao() {
 		try {
@@ -41,8 +56,7 @@ public class MemberDao {
 
 	// 회원가입 메소드(허혜영)
 
-	public boolean singup(MemberDto dto) {
-
+	public boolean singup( MemberDto dto ) {
 		String sql = "insert into user values( null, ?, ?, ?, ?, ?, ?, now() )";
 
 		try {
@@ -161,6 +175,9 @@ public class MemberDao {
 	
 	
 	
+	
+	 
+	 
 	
 	
 } // class e

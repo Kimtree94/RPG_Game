@@ -6,6 +6,11 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
+<<<<<<< HEAD
 	<classpathentry exported="true" kind="lib" path="C:/mysql-connector-java-8.0.30.jar"/>
+=======
+	<classpathentry kind="lib" path="C:/mysql-connector-java-8.0.30.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+>>>>>>> refs/remotes/origin/Heo
 	<classpathentry kind="output" path="bin"/>
 </classpath>

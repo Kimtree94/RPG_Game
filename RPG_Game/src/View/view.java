@@ -7,6 +7,7 @@ import Controller.Member_Controller;
 import Model.Dao.MemberDao;
 import Model.Dto.CharacterDto;
 import Model.Dto.MemberDto;
+import Model.Dto.SearchDto;
 
 public class view {
 
@@ -63,7 +64,7 @@ public class view {
 	}
 	
 	
-	// 회원가입
+	// 회원가입 - 허혜영
 	public void singup() {
 
 		System.out.println("     ◾ ◾ ◾ ◾ 회 원 가 입 ◾ ◾ ◾ ◾ \n");
