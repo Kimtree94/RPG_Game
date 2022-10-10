@@ -9,7 +9,7 @@ public class MemberDto {
 	private String phone;		// 전화번호
 	private int ssn;			// 생년월일
 	private String email;		// 이메일
-	private int date;			// 가입일자
+	private String date;		// 가입일자
 	
 	private String nick_name;	// 캐릭터 이름
 	private String x;			// 캐릭터 성별
@@ -106,12 +106,12 @@ public class MemberDto {
 	}
 
 
-	public int getDate() {
+	public String getDate() {
 		return date;
 	}
 
 
-	public void setDate(int date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 

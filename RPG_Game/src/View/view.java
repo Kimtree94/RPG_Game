@@ -31,9 +31,10 @@ public class view {
 				+ "⚔\t┃Welcome┠┨★┠┨☆┃\t  ⚔\r\n" + "⚔\t┗©━━©┛ ┗©┛┗©┛\t\t  ⚔ \n ⚔⚔⚔ RPG게임에 오신것을 환영합니다 ⚔⚔⚔");
 		System.out.println("\t1.로그인 2.회원가입 3.회원탈퇴");
 		int input = scanner.nextInt();
-		if (input == 1) {
-			view.login();
-			view.select();
+		if( input == 1 ) {
+			login();
+			//mypage_user();
+			mypage_character();
 		}
 
 		else if (input == 2) {
@@ -125,6 +126,37 @@ public class view {
 		System.out.println("회원정보가 일치하지 않습니다.");
 		return false;
 	}
+		
+		
+	// 아이디 찾기 - 허혜영
+	public void id_search() {
+		// 이름, 연락처
+		System.out.println("     ◾ ◾ ◾ ◾ 아이디 찾기 ◾ ◾ ◾ ◾ ");
+		System.out.println("\t ◦ 이름을 입력하세요");
+		String name = scanner.next();
+		System.out.println("\t ◦ 연락처를 입력하세요");
+		String phone = scanner.next();
+		SearchController.getInstance().id_search( name, phone );
+		
+		SearchDto sdto = SearchController.getInstance().id_search(name, phone);
+		System.out.println("\t ◦ 당신의 아이디는 [ " + sdto.getID() + " ] 입니다!");
+		
+	} // id_search 메소드 종료
+	
+	// 비밀번호 찾기 - 허혜영	
+	public void pw_search() {
+		// 아이디, 연락처
+		System.out.println("     ◾ ◾ ◾ ◾ 비밀번호 찾기 ◾ ◾ ◾ ◾ ");
+		System.out.println("\t ◦ 아이디를 입력하세요");
+		String id = scanner.next();
+		System.out.println("\t ◦ 생년월일을 입력하세요");
+		int ssn = scanner.nextInt();
+		
+		MemberDto mdto = SearchController.getInstance().pw_search( id, ssn );
+		System.out.println("\t ◦ 당신의 아이디는 [ " + mdto.getPw() + " ] 입니다!");
+		
+	} // pw_search 메소드 종료
+    
 	
 	// 회원정보수정 (김원종) [ 2022 - 10 -07 ] 
 	boolean usercorrection() {
@@ -139,6 +171,7 @@ public class view {
 		String rephone = scanner.next();
 		System.out.println("수정할 이메일을 입력해주요.");
 		String reemail = scanner.next();
+
 	
 		
 		boolean result = Member_Controller.getInstance().usercorrection(pw, reid, repw, rephone, reemail);
@@ -156,4 +189,30 @@ public class view {
 			System.out.print(dto.getNick_name()+"\t|"+dto.getX());
 		}
 	}
+	
+	
+	// 내 정보 보기(유저) - 허혜영 22.10.10
+	public void mypage_user() {
+		SearchDto sdto = SearchController.getInstance().mypage_user();
+		System.out.println(" — [ 유저 정보 ] —————————————————————————— ");
+		System.out.println(" ◦ 이 름	: " + sdto.getName());
+		System.out.println(" ◦ 연락처 : " + sdto.getPhone());
+		System.out.println(" ◦ 메일주소 : " + sdto.getEmail());
+		System.out.println(" ◦ 가입일자 : " + sdto.getDate());
+		System.out.println(" ——————————————————————————————————————— ");
+	} // mypage_user 메소드 종료
+    
+
+	// 내 정보 보기(캐릭터) - 허혜영 22.10.10
+	public void mypage_character() {
+		CharacterDto cdto = SearchController.getInstance().mypage_character();
+		System.out.println();
+		System.out.println(" — [ 캐릭터 정보 ] ————————————————————————— ");
+		System.out.println(" ◦ 닉네임 : " + cdto.getNick_name());
+		System.out.println(" ◦ 성 별	: " + cdto.getX());
+		System.out.println(" ———————————————————————————————————————— ");
+	} // mypage_character 메소드 종료
+	
+	
+	
 } // class E

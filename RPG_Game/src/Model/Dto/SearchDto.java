@@ -9,8 +9,8 @@ public class SearchDto {
 	private String phone;		// 전화번호
 	private int ssn;			// 생년월일
 	private String email;		// 이메일
-	private int date;			// 가입일자
-	
+	private String date;		// 가입일자
+	// *** date int로 하면 출력이 안돼요!
 	
 	
 	
@@ -26,7 +26,7 @@ public class SearchDto {
 	}
 
 	// 내 정보 보기 생성자 - 허혜영
-	public SearchDto(String name, String phone, String email, int date) {
+	public SearchDto(String name, String phone, String email, String date) {
 		this.name = name;
 		this.phone = phone;
 		this.email = email;
@@ -85,11 +85,11 @@ public class SearchDto {
 		this.email = email;
 	}
 
-	public int getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(int date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 	
