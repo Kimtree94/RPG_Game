@@ -3,6 +3,7 @@ package Controller;
 import java.util.ArrayList;
 
 import Model.Dao.SearchDao;
+import Model.Dto.CharacterDto;
 import Model.Dto.MemberDto;
 import Model.Dto.SearchDto;
 
@@ -30,11 +31,16 @@ public class SearchController {
 		
 	} // pw_search 메소드 종료
 	
-	// 내 정보 보기 - 허혜영
+	// 내 정보 보기(유저) - 허혜영
 	public SearchDto mypage_user() {
 		return SearchDao.getInstance().mypage_user();
 		
 	}
 	
+	// 내 정보 보기(캐릭터) - 허혜영
+	public CharacterDto mypage_character() {
+		return SearchDao.getInstance().mypage_character();
+		
+	}
 }
 

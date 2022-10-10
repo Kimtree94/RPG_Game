@@ -6,6 +6,7 @@ import java.util.Scanner;
 import Controller.Controller;
 import Controller.SearchController;
 import Model.Dao.MemberDao;
+import Model.Dto.CharacterDto;
 import Model.Dto.MemberDto;
 import Model.Dto.SearchDto;
 
@@ -31,6 +32,8 @@ public class view {
 		int input = scanner.nextInt();
 		if( input == 1 ) {
 			login();
+			//mypage_user();
+			mypage_character();
 		}
 		
 		else if( input == 2 ) {
@@ -114,27 +117,26 @@ public class view {
 	} // pw_search 메소드 종료
     
 	
-	// 내 정보 보기 - 허혜영
+	// 내 정보 보기(유저) - 허혜영 22.10.10
 	public void mypage_user() {
-		
 		SearchDto sdto = SearchController.getInstance().mypage_user();
-		
-		if( sdto == null ) {
-			System.out.println("회원 정보가 일치하지 않습니다.");
-			return;
-		}
-		
-		System.out.println("     ◾ ◾ ◾ ◾ 유저 정보 ◾ ◾ ◾ ◾ ");
-		System.out.println("\t ◦ 이름 : " + sdto.getName());
-		System.out.println("\t ◦ 연락처 : " + sdto.getPhone());
-		System.out.println("\t ◦ 메일주소 : " + sdto.getEmail());
-		System.out.println("\t ◦ 가입일자 : " + sdto.getDate());
-		
-		System.out.println("     ◾ ◾ ◾ ◾ 캐릭터 정보 ◾ ◾ ◾ ◾ ");
-		System.out.println("\t ◦ 닉네임 : " + "");
-		System.out.println("\t ◦ 성별 : " + "");
-	}
+		System.out.println(" — [ 유저 정보 ] —————————————————————————— ");
+		System.out.println(" ◦ 이 름	: " + sdto.getName());
+		System.out.println(" ◦ 연락처 : " + sdto.getPhone());
+		System.out.println(" ◦ 메일주소 : " + sdto.getEmail());
+		System.out.println(" ◦ 가입일자 : " + sdto.getDate());
+		System.out.println(" ——————————————————————————————————————— ");
+	} // mypage_user 메소드 종료
     
 	
+	// 내 정보 보기(캐릭터) - 허혜영 22.10.10
+	public void mypage_character() {
+		CharacterDto cdto = SearchController.getInstance().mypage_character();
+		System.out.println();
+		System.out.println(" — [ 캐릭터 정보 ] ————————————————————————— ");
+		System.out.println(" ◦ 닉네임 : " + cdto.getNick_name());
+		System.out.println(" ◦ 성 별	: " + cdto.getX());
+		System.out.println(" ———————————————————————————————————————— ");
+	} // mypage_character 메소드 종료
 	
 } //class E

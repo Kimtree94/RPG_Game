@@ -9,8 +9,9 @@ public class Start {
 		Start start = new Start();
 		// start.pw_search();
 		// start.id_search();
-		start.first_view();
-		// start.mypage_user();
+		// start.first_view();
+		 start.mypage_user();
+		 start.mypage_character();
 		
 	} // main 종료
 	
@@ -37,6 +38,8 @@ public class Start {
 		view.getInstance().mypage_user();
 	}
 	
-	
+	public void mypage_character() {
+		view.getInstance().mypage_character();
+	}
 	
 }

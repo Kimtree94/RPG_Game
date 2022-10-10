@@ -116,8 +116,7 @@ public class SearchDao {
 
 	// 내 정보 보기(유저) - 허혜영
 	public SearchDto mypage_user() {
-
-		String sql = "select name, phone, email, date from user where id = ? ";
+		String sql = "select name, phone, email, date from user";
 		
 		try {
 			ps = con.prepareStatement(sql);
@@ -125,7 +124,7 @@ public class SearchDao {
 			
 			if( rs.next() ) {
 				SearchDto sdto = new SearchDto(
-						rs.getString(1),rs.getString(2),rs.getString(3),rs.getInt(4));
+						rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4));
 				return sdto;		
 			}
 		} catch (Exception e) {
@@ -135,10 +134,23 @@ public class SearchDao {
 	} // mypage_user 메소드 종료
 
 	
-	// 내 정보 보기 (캐릭터) - 허혜영
-	public void mypage_character() {
+	// 내 정보 보기(캐릭터) - 허혜영
+	public CharacterDto mypage_character() {
+		String sql = "select nick_name, x from create_character";
 		
-		
+		try {
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			
+			if( rs.next() ) {
+				CharacterDto mdto = new CharacterDto(
+						rs.getString(1),rs.getString(2));
+				return mdto;		
+			}
+		} catch (Exception e) {
+			System.out.println( "오류 : " + e );
+		}
+		return null;
 	} // mypage_character 메소드 종료
 	
 	
